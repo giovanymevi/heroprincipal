@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>amandarina · hero funcional</title>
+    <!-- font & base (optional, just to match clean style) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tiny extra for tabular nums etc -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap");
+      * {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      .font-display {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* From Uiverse.io by andrew-demchenk0 */
+      .card {
+        --main-color: #000;
+        --submain-color: #78858f;
+        --bg-color: #fff;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        position: relative;
+        width: 300px;
+        /* Ajustado a auto para que quepan tus botones */
+        height: auto;
+        min-height: 384px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        background: var(--bg-color);
+        box-shadow:
+          0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      .card__img {
+        height: 192px;
+        width: 100%;
+      }
+
+      .card__img svg {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .card__avatar {
+        position: absolute;
+        width: 114px;
+        height: 114px;
+        background: var(--bg-color);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Ajustado para centrarse en la línea de la imagen (192px - mitad del avatar 57px) */
+        top: 135px;
+      }
+
+      .card__avatar svg {
+        width: 100px;
+        height: 100px;
+      }
+
+      .card__title {
+        margin-top: 60px;
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--main-color);
+      }
+
+      .card__subtitle {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 15px;
+        color: var(--submain-color);
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-stone-50 to-neutral-100 min-h-screen flex items-center justify-center p-5"
+  >
+    <!-- main hero card – updated to Uiverse card style -->
+    <div class="card">
+      <div class="card__img">
+        <!-- Banner SVG placeholder (gris suave) -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          preserveAspectRatio="none"
+        >
+          <rect width="100%" height="100%" fill="#e5e7eb" />
+        </svg>
+      </div>
+
+      <div class="card__avatar">
+        <!-- Avatar SVG placeholder (icono usuario) -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="text-neutral-800"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <!-- GITHUB BUTTON – exact copy from Uiverse, with active href + star count (kept 6 as demo, but you can modify) -->
+      <div class="flex justify-center mt-[60px] w-full px-4">
+        <!-- From Uiverse.io by elijahgummer -->
+        <a
+          href="https://github.com/giovanymevi"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex overflow-hidden items-center text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-black text-white shadow hover:bg-black/90 h-9 px-4 py-2 max-w-52 whitespace-pre md:flex group relative w-full justify-center gap-2 rounded-md transition-all duration-300 ease-out hover:ring-2 hover:ring-black hover:ring-offset-2"
+        >
+          <span
+            class="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-40"
+          ></span>
+          <div class="flex items-center">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 438.549 438.549">
+              <path
+                d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+              ></path>
+            </svg>
+            <span class="ml-1 text-white">Star on GitHub</span>
+          </div>
+          <div class="ml-2 flex items-center gap-1 text-sm md:flex">
+            <svg
+              class="w-4 h-4 text-gray-500 transition-all duration-300 group-hover:text-yellow-300"
+              data-slot="icon"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+            <span
+              class="inline-block tabular-nums tracking-wider font-display font-medium text-white"
+              >6</span
+            >
+          </div>
+        </a>
+      </div>
+
+      <!-- row of social buttons (INGRESAR, GitHub, WhatsApp, Facebook, Instagram) all active -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-4 px-2">
+        <!-- INGRESAR button (simple accent) -->
+        <a
+          href="#"
+          class="group relative inline-flex items-center justify-center gap-1 overflow-hidden rounded-md border border-black/10 bg-black px-5 py-2 text-sm font-medium text-white transition-all hover:bg-black/80 hover:ring-2 hover:ring-black hover:ring-offset-2"
+          onclick="
+            alert('🪪 ingresar / login demo');
+            return false;
+          "
+        >
+          <span>INGRESAR</span>
+          <svg
+            class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </a>
+
+        <!-- GitHub (duplicate of the main? but here we list as icon+label minimal) 
+           we keep the original huge button above, but also add a minimal icon version for the set,
+           BUT to avoid repetition we'll style it as a rounded button just with github word and icon 
+           (and keep it pointing to same url)   -->
+        <a
+          href="https://github.com/giovanymevi"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-md bg-[#24292F] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#24292F]/80 hover:ring-2 hover:ring-[#24292F] hover:ring-offset-2"
+        >
+          <svg
+            class="w-4 h-4 fill-current"
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+            ></path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Website -->
+        <a
+          href="https://amandarina.cl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-md bg-[#1d4ed8] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#1d4ed8]/80 hover:ring-2 hover:ring-[#1d4ed8] hover:ring-offset-2"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" width="16" height="16">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+            <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <span>amandarina.cl</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/56912345678"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#25D366]/80 hover:ring-2 hover:ring-[#25D366] hover:ring-offset-2"
+          onclick="
+            alert(
+              '🧪 WhatsApp demo — enlace funcional a https://wa.me/... (simulado)',
+            );
+            return true;
+          "
+        >
+          <svg
+            class="w-4 h-4 fill-current"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M19.077 4.928C17.191 3.041 14.683 2 12.006 2c-5.26 0-9.535 4.275-9.54 9.537a9.496 9.496 0 001.27 4.762L2 22l5.697-1.75a9.518 9.518 0 004.558 1.16h.004c5.259 0 9.537-4.276 9.542-9.539 0-2.551-.994-4.951-2.802-6.758l.078-.077zM12.006 20.21h-.004a7.92 7.92 0 01-4.02-1.082l-.288-.171-3.381 1.04 1.08-3.297-.188-.298a7.874 7.874 0 01-1.216-4.219c.004-4.365 3.555-7.916 7.928-7.916 2.117 0 4.108.827 5.605 2.327a7.916 7.916 0 012.326 5.633c-.004 4.366-3.554 7.917-7.922 7.917h.04zm4.345-5.963c-.238-.12-1.41-.696-1.628-.775-.218-.08-.376-.12-.535.12-.158.24-.616.775-.756.934-.14.16-.28.18-.517.06-.238-.12-1.003-.37-1.91-1.18-.706-.63-1.182-1.408-1.322-1.646-.14-.24-.015-.37.105-.49.108-.108.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.535-1.29-.733-1.77-.193-.466-.39-.403-.536-.41-.14-.007-.3-.01-.46-.01-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2.01 0 1.18.86 2.32.98 2.48.12.16 1.692 2.585 4.1 3.625.573.247.98.394 1.315.505.59.196 1.126.168 1.55.102.473-.074 1.456-.595 1.662-1.17.206-.575.206-1.068.144-1.17-.06-.1-.22-.16-.46-.28z"
+            />
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Facebook (profile exact) -->
+        <a
+          href="https://www.facebook.com/profile.php?id=61575091826525"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-md bg-[#1877F2] px-4 py-2 text-sm font-medium text-white transition-all hover:bg-[#1877F2]/80 hover:ring-2 hover:ring-[#1877F2] hover:ring-offset-2"
+        >
+          <svg
+            class="w-4 h-4 fill-current"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12z"
+            />
+          </svg>
+          <span>Facebook</span>
+        </a>
+
+        <!-- Instagram (placeholder – add your real IG) -->
+        <a
+          href="https://instagram.com/amandarina.cl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-md bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] px-4 py-2 text-sm font-medium text-white transition-all hover:brightness-110 hover:ring-2 hover:ring-fuchsia-600 hover:ring-offset-2"
+          onclick="
+            alert('📸 Instagram abriría perfil (demo)');
+            return true;
+          "
+        >
+          <svg
+            class="w-4 h-4 fill-current"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.668.014-4.947.072-1.422.065-2.775.373-3.814 1.412-1.039 1.039-1.347 2.392-1.412 3.814-.058 1.279-.072 1.688-.072 4.947s.014 3.668.072 4.947c.065 1.422.373 2.775 1.412 3.814 1.039 1.039 2.392 1.347 3.814 1.412 1.279.058 1.688.072 4.947.072s3.668-.014 4.947-.072c1.422-.065 2.775-.373 3.814-1.412 1.039-1.039 1.347-2.392 1.412-3.814.058-1.279.072-1.688.072-4.947s-.014-3.668-.072-4.947c-.065-1.422-.373-2.775-1.412-3.814-1.039-1.039-2.392-1.347-3.814-1.412-1.279-.058-1.688-.072-4.947-.072z"
+            />
+            <path
+              d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"
+            />
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ensure all external links are safe + demo alert for ingresar (optional) -->
+    <script>
+      // just to make the ingresar demo a bit smoother (no real action)
+      // you can replace the href later.
+      document.querySelectorAll('a[href="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+          if (link.getAttribute("onclick")) return; // already has onclick demo
+          e.preventDefault();
+          alert("🔐 acceder · panel demo (personaliza esta ruta)");
+        });
+      });
+    </script>
+  </body>
+</html>
